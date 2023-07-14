@@ -6,4 +6,4 @@ class COMMITTEE(models.Model):
     meal_rate = models.FloatField(null=False, blank=False)
 
     def __str__(self):
-        return "Committe no. {a}".format(self.committee_no)
+        return str(self.committee_no)

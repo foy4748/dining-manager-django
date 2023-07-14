@@ -1,12 +1,12 @@
 from django.urls import path, include
-from rest_framework import routers
-
-from .serializers import CommitteViewSet
 
 # Routers provide an easy way of automatically determining the URL conf.
-router = routers.DefaultRouter()
-router.register(r'committee', CommitteViewSet)
+
+# Importing Views
+from committee.views import CommitteViewSet
+
+app_name = "committee"
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', CommitteViewSet.as_view({'get': 'list'}), name="all"),
 ]

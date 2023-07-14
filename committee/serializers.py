@@ -1,4 +1,4 @@
-from rest_framework import routers, serializers, viewsets
+from rest_framework import  serializers
 from .models import COMMITTEE
 
 class CommitteSerializer(serializers.HyperlinkedModelSerializer):
@@ -6,6 +6,3 @@ class CommitteSerializer(serializers.HyperlinkedModelSerializer):
         model = COMMITTEE
         fields = '__all__'
 
-class CommitteViewSet(viewsets.ModelViewSet):
-    queryset = COMMITTEE.objects.all();
-    serializer_class = CommitteSerializer

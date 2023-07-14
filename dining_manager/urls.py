@@ -17,8 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework import routers
+
+# Importing Views
+from committee.views import CommitteViewSet
+from request.views import ActivationRequestViewSet, DeactivationRequestViewSet
+
+router = routers.DefaultRouter()
+router.register(r'committee', CommitteViewSet)
+router.register(r'activation-requests',ActivationRequestViewSet)
+router.register(r'deactivation-requests',DeactivationRequestViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('committee/', include('committee.urls'))
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

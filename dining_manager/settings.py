@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'request.apps.RequestConfig',
     'committee.apps.CommitteeConfig',
+    'active.apps.ActiveConfig',
+    'counter.apps.CounterConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [

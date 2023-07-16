@@ -22,7 +22,7 @@ class MEAL_COUNTER(models.Model):
         verbose_name = 'Meal Counter'
         verbose_name_plural = 'Meal Counters'
 
-    def __str__(self):
-        total_meals = self.regular_meal + self.friday_meal + self.feast
-        total_cost = self.regular_meal_cost + self.friday_meal_cost + self.feast_cost
-        return f'{total_cost} {total_meals}'
+    # def __str__(self):
+    #     total_meals = self.regular_meal + self.friday_meal + self.feast
+    #     total_cost = self.regular_meal_cost + self.friday_meal_cost + self.feast_cost
+    #     return f'{total_cost} {total_meals}'
